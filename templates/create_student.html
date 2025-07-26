@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg">
+    <h2>Create Student Account</h2>
+    <form action="/create_student" method="post" class="form-box">
+        <input type="text" name="student_name" placeholder="Student Name" required><br>
+        <input type="text" name="student_id" placeholder="Student ID" required><br>
+        <input type="text" name="semester" placeholder="Semester" required><br>
+        <input type="text" name="department" placeholder="Department" required><br>
+        <input type="text" name="session" placeholder="Session" required><br>
+        <input type="submit" value="Create Student">
+    </form>
+    <a href="/dashboard" class="back-link">← Back to Dashboard</a>
+</body>
+</html>

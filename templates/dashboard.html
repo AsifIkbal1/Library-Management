@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+    function updateTime() {
+        const now = new Date();
+        document.getElementById('datetime').textContent = now.toLocaleString();
+    }
+    setInterval(updateTime, 1000);
+    window.onload = updateTime;
+    </script>
+</head>
+<body class="bg">
+    <h1>Library Management Dashboard</h1>
+    <p id="datetime" class="datetime">Loading time...</p>
+    <div class="column-container">
+        <a href="/create_student">👤 Create Student</a>
+        <a href="/add_book">📚 Add Book</a>
+        <a href="/issue_book">✅ Issue Book</a>
+        <a href="/return_book">🔁 Return Book</a>
+        <a href="/list">📄 View List</a>
+        <a href="/logout" style="background:#e74c3c;color:white;">Logout</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issue Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg">
+    <h2>Issue Book</h2>
+    <form action="/issue_book" method="post" class="form-box">
+        <select name="student_id" required>
+            <option value="" disabled selected>Select Student</option>
+            {% for student in students %}
+                <option value="{{ student['student_id'] }}">{{ student['student_name'] }} ({{ student['student_id'] }})</option>
+            {% endfor %}
+        </select><br>
+        <select name="book_name" required>
+            <option value="" disabled selected>Select Book</option>
+            {% for book in books %}
+                <option value="{{ book['book_name'] }}">{{ book['book_name'] }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Issue Book">
+    </form>
+    <a href="/dashboard" class="back-link">← Back to Dashboard</a>
+</body>
+</html>
